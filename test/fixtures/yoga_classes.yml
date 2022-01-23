@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2022-01-23
+  time: 2022-01-23 16:51:48
+  style: MyString
+  teacher_id: 1
+  studio: MyString
+
+two:
+  date: 2022-01-23
+  time: 2022-01-23 16:51:48
+  style: MyString
+  teacher_id: 1
+  studio: MyString
