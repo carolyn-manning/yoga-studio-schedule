@@ -5,7 +5,7 @@ class CreateYogaClasses < ActiveRecord::Migration[6.1]
       t.time :time
       t.string :style
       t.integer :teacher_id
-      t.intger :studio_id
+      t.integer :studio_id
 
       t.timestamps
     end
