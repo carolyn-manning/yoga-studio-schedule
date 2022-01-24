@@ -1,0 +1,19 @@
+<%= form_for @yoga_class  do |f| %>
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+    <br/>
+    <%= f.label :time %>
+    <%= f.time_field :time %>
+    <br/>
+    <%= f.label :style %>
+    <%= f.text_field :style %>
+    <br/>
+    <%= f.label :teacher_id %>
+    <%= f.collection_select :teacher_id, Teacher.order(:first_name),:id, :first_name, include_blank: true  %>
+    <br/>
+    <%= f.label :studio_id %>
+    <%= f.collection_select :studio_id, Studio.order(:name),:id,:name, include_blank: true  %>
+    <br/>
+  
+    <%= f.submit %>
+<% end %>
