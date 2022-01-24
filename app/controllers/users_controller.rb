@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
     def show 
         @user = User.find_by_id(params[:id])
+        redirect_if_not_current_user
     end 
 
     private 
