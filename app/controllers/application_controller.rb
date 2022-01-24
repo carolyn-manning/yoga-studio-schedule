@@ -9,4 +9,13 @@ class ApplicationController < ActionController::Base
     def logged_in?
         !!current_user
     end 
+
+    def redirect_if_not_current_user
+        if @user && @user != current_user 
+            redirect_to user_path(current_user)
+            #flash 
+        elsif !@user 
+            redirect_to '/'
+        end 
+    end
 end
