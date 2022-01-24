@@ -5,11 +5,15 @@ class YogaClassesController < ApplicationController
 
     def create 
         @yoga_class = YogaClass.new(yoga_class_params)
-        if @yoga_class.save
+        if @yoga_class.save!
             redirect_to yoga_classes_path
         else 
             render 'new'
         end 
+    end 
+
+    def index
+        @yoga_classes = YogaClass.all
     end 
 
     private 
@@ -19,8 +23,8 @@ class YogaClassesController < ApplicationController
             :date,
             :time,
             :style, 
-            :teacher,
-            :studio
+            :teacher_id,
+            :studio_id
             )
     end 
 end
