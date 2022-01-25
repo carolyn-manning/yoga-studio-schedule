@@ -1,3 +1,4 @@
 <% @teachers.each do |teacher| %>
-    <li> <%= teacher.first_name %> <%= teacher.last_name %>  </li>
+    <li> <%= link_to teacher.first_name, teacher_path(teacher) %> </li>
 <% end %>
+
