@@ -1,6 +1,11 @@
 <h1> <%= @teacher.first_name %> <%= @teacher.last_name %> </h1> 
 
-<h2> <%= @teacher.first_name %>'s Styles </h2> 
+<h2> <%= @teacher.first_name %>'s Styles: </h2> 
+<% @teacher.styles.each do |style| %>
+    <li> 
+    <%= style.name %> 
+    </li>
+<% end %>
 
 <h2> <%= @teacher.first_name %>'s Upcoming Classes </h2> 
 <% @teacher.yoga_classes.each do |yoga_class| %>

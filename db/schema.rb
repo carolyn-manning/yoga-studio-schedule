@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_23_220500) do
+ActiveRecord::Schema.define(version: 2022_01_25_075700) do
 
   create_table "studios", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "styles", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -45,7 +52,7 @@ ActiveRecord::Schema.define(version: 2022_01_23_220500) do
   create_table "yoga_classes", force: :cascade do |t|
     t.date "date"
     t.time "time"
-    t.string "style"
+    t.string "style_id"
     t.integer "teacher_id"
     t.integer "studio_id"
     t.datetime "created_at", precision: 6, null: false
