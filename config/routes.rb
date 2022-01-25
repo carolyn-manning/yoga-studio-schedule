@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :styles
   root 'static#home'
 
   get '/signup', to: 'users#new'

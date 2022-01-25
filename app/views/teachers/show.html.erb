@@ -1,1 +1,14 @@
-<h2> <%= @teacher.first_name %> <%= @teacher.last_name %> </h2> 
+<h1> <%= @teacher.first_name %> <%= @teacher.last_name %> </h1> 
+
+<h2> <%= @teacher.first_name %>'s Styles </h2> 
+
+<h2> <%= @teacher.first_name %>'s Upcoming Classes </h2> 
+<% @teacher.yoga_classes.each do |yoga_class| %>
+    <li> 
+    <%= yoga_class.date %> 
+    <%= yoga_class.time %> 
+    <%= yoga_class.style %> 
+    <%= yoga_class.teacher.first_name %> 
+    <%= yoga_class.studio.name %> 
+    </li>
+<% end %>
