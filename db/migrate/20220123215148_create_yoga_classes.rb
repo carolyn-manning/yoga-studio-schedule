@@ -3,7 +3,7 @@ class CreateYogaClasses < ActiveRecord::Migration[6.1]
     create_table :yoga_classes do |t|
       t.date :date
       t.time :time
-      t.string :style
+      t.string :style_id
       t.integer :teacher_id
       t.integer :studio_id
 
