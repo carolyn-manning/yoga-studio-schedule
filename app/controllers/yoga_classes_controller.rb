@@ -16,6 +16,10 @@ class YogaClassesController < ApplicationController
         @yoga_classes = YogaClass.all
     end 
 
+    def show 
+        @yoga_class = YogaClass.find_by(id:params[:id])
+    end 
+
     private 
 
     def yoga_class_params
