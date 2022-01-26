@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2022_01_25_075700) do
   create_table "teachers", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.string "string"
+    t.string "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2022_01_25_075700) do
     t.string "first_name"
     t.string "last_name"
     t.string "password_digest"
+    t.boolean "admin"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -2,3 +2,9 @@
     <li> <%= link_to teacher.first_name, teacher_path(teacher) %> </li>
 <% end %>
 
+<% if current_user && current_user.admin %>
+    <li> <%= link_to "Add New Teacher", new_teacher_path %> </li>
+<% end %>
+
+
+
