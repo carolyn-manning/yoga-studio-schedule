@@ -11,19 +11,25 @@
   </head>
 
   <body>
-  <br>
-  <br>
+  </br>
+  </br>
 
     <nav> 
       <%= link_to 'Home', root_path %> 
       <%= link_to 'Class Schedule', schedule_path %> 
       <%= link_to 'Teachers', teachers_path %> 
-      <%= link_to 'Sign Up', new_user_path %> 
-      <%= link_to 'Sign In', signin_path %> </h3>
+      <%  if logged_in?  %> 
+          <%= link_to "My Account", user_path(current_user)%> 
+      <% else %>
+          <%=link_to 'Sign Up', new_user_path %>
+      <% end %> 
+      <%  if logged_in?  %> 
+          <%= link_to "Sign Out", signout_path, method:'delete' %>
+      <% else %>
+          <%=link_to 'Sign In', signin_path %>
+      <% end %> 
     <nav>
+
     <%= yield %>
   </body>
-  <% if logged_in? %>
-    <%= link_to "Sign Out", signout_path, method:'delete' %>
-  <% end %>
 </html>
