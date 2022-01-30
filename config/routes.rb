@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   delete '/signout/', to: 'sessions#destroy'
 
   get '/schedule', to: 'yoga_classes#index'
+
+  post '/add_class', to: 'user_classes#add_class'
   
   resources :studios
   resources :users

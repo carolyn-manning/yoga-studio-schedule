@@ -19,6 +19,7 @@ class UsersController < ApplicationController
         redirect_if_not_current_user
     end 
 
+
     private 
     def user_params
         params.require(:user).permit(
@@ -28,4 +29,5 @@ class UsersController < ApplicationController
             :password
             )
     end 
+
 end

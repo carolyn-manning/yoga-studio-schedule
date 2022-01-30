@@ -1,7 +1,10 @@
 <li> 
-<%= yoga_class.date %> 
-<%= yoga_class.time %> 
-<%= yoga_class.style.name %> 
-<%= yoga_class.teacher.first_name %> 
-<%= yoga_class.studio.name %> 
+<%= @yoga_class.date %> 
+<%= @yoga_class.time %> 
+<%= @yoga_class.style.name %> 
+<%= @yoga_class.teacher.first_name %> 
+<%= @yoga_class.studio.name %> 
 </li>
+
+<%= link_to "Add class to My Schedule", add_class_path, method:'post' %>
+

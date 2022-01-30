@@ -5,7 +5,12 @@
     <%= yoga_class.style.name %> 
     <%= yoga_class.teacher.first_name %> 
     <%= yoga_class.studio.name %> 
+    <%= form_tag add_class_path do %>
+        <%= hidden_field_tag :yoga_class_id, yoga_class.id %>
+        <%= submit_tag "Add Class" %>
+      <% end %>
     </li>
+    
 <% end %>
 
 </br>
