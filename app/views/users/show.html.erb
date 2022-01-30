@@ -1,3 +1,14 @@
-<h2> Welcome, <%= @user.first_name %>! </h2>
+<h1> Welcome, <%= @user.first_name %>! </h1>
 
 <h3> Your upcoming classes: </h3>
+
+<% current_user.yoga_classes.each do |yoga_class| %>
+    <li> 
+    <%= yoga_class.date %> 
+    <%= yoga_class.time %> 
+    <%= yoga_class.style.name %> 
+    <%= yoga_class.teacher.first_name %> 
+    <%= yoga_class.studio.name %> 
+    </li>
+    
+<% end %>
