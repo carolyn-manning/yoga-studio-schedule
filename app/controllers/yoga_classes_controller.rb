@@ -13,7 +13,11 @@ class YogaClassesController < ApplicationController
     end 
 
     def index
-        @yoga_classes = YogaClass.all
+        if params[:user_id]
+            @yoga_classes = User.find(params[:user_id]).yoga_classes
+        else 
+            @yoga_classes = YogaClass.all
+        end 
     end 
 
     def show 

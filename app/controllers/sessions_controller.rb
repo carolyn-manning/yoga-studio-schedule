@@ -7,10 +7,12 @@ class SessionsController < ApplicationController
             @user =
             User.find_or_create_by(email: auth['info']['email']) do |u|
               u.password = SecureRandom.hex(12)
+              u.first_name = "Github User"
+              u.last_name = auth['info']['email']
             end
             if @user
                 session[:user_id] = @user.id
-                redirect_to '/'
+                redirect_to user_path(@user)
             else 
                 flash[:message] = "error"
                redirect_to signin_path
