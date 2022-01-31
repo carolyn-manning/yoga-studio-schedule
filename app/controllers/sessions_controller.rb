@@ -3,13 +3,28 @@ class SessionsController < ApplicationController
     end 
 
     def create
-        user = User.find_by(email: params[:user][:email])
-        if user && user.authenticate(params[:user][:password])
-            session[:user_id] = user.id
-            redirect_to user_path(user)
+        if auth 
+            @user =
+            User.find_or_create_by(email: auth['info']['email']) do |u|
+              u.password = SecureRandom.hex(12)
+            end
+            if @user
+                session[:user_id] = @user.id
+                redirect_to '/'
+            else 
+                flash[:message] = "error"
+               redirect_to signin_path
+           end 
+
         else 
-            flash[:message] = "error"
-            redirect_to signin_path
+            user = User.find_by(email: params[:user][:email])
+             if user && user.authenticate(params[:user][:password])
+                session[:user_id] = user.id
+                redirect_to user_path(user)
+            else 
+                 flash[:message] = "error"
+                redirect_to signin_path
+            end 
         end 
     end 
 
@@ -17,4 +32,10 @@ class SessionsController < ApplicationController
         session.clear
         redirect_to '/'
     end 
+
+    private
+
+    def auth
+        request.env['omniauth.auth']
+    end
 end
