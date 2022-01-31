@@ -13,10 +13,12 @@ Rails.application.routes.draw do
 
   post '/add_class', to: 'user_classes#add_class'
 
+  post '/delete_class', to: 'user_classes#destroy'
+
   get '/auth/github/callback' => 'sessions#create'
   
   resources :studios
-  
+
   resources :users do 
     resources :yoga_classes
   end 
