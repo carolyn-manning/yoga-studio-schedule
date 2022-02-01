@@ -1,4 +1,5 @@
 <h1> <%= @teacher.full_name %> </h1> 
+<p> <%= @teacher.bio %> </p> 
 
 <h2> <%= @teacher.first_name %>'s Styles: </h2> 
 <% @teacher.styles.uniq.each do |style| %>
@@ -7,7 +8,7 @@
     </li>
 <% end %>
 
-<h2> <%= @teacher.first_name %>'s Upcoming Classes </h2> 
+<h2> <%= @teacher.first_name %>'s Upcoming Classes: </h2> 
 
 <%= render 'yoga_classes/class_table' %> 
 

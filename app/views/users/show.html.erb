@@ -8,10 +8,9 @@
     <%= yoga_class.time %> 
     <%= yoga_class.style.name %> 
     <%= yoga_class.teacher.first_name %> 
-    <%= yoga_class.studio.name %> <br>
     <%= form_tag delete_class_path do %>
         <%= hidden_field_tag :yoga_class_id, yoga_class.id %>
-        <%= submit_tag "Delete Class" %>
+        <%= submit_tag "Cancel Class" %>
     <% end %>
     </li>
     
