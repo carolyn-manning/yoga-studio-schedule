@@ -10,8 +10,6 @@ Teacher.create(first_name:"Jane", last_name:"Doe", bio:"Lorem ipsum dolor sit am
 ")
 Teacher.create(first_name:"John", last_name:"Doe", bio:"Lorem ipsum dolor sit amet, sint decore voluptatum nam ei, his magna quodsi deseruisse ne, mea atqui aeque torquatos an. Sed cu prima maluisset constituto. Vel tamquam recteque te, melius dolorem phaedrum nec ei. Vim lucilius perfecto iracundia ea.
 ")
-Studio.create(name:"Studio A")
-Studio.create(name:"Studio B")
 Style.create(name:"Style 1", description: "Test Description")
 Style.create(name:"Style 2", description: "Test Description")
 User.create(first_name:"Studio Admin", last_name:"Test", password:"password", email:"testadmin@test.com", admin:true)

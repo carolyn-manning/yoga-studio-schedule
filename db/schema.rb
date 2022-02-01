@@ -12,12 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2022_01_25_075700) do
 
-  create_table "studios", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "styles", force: :cascade do |t|
     t.string "name"
     t.string "description"

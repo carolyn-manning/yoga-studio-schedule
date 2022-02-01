@@ -5,8 +5,8 @@
     <%= f.label :time %>
     <%= f.time_field :time %>
     <br/>
-    <%= f.label :style_id %>
-    <%= f.collection_select :style_id, Style.all, :id, :name %>
+    <%= f.label :style_name %>
+    <%= f.text_field :style_name %>
     <br/>
     <%= f.label :teacher_id %>
     <%= f.collection_select :teacher_id, Teacher.all, :id, :first_name %>

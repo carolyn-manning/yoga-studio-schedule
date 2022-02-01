@@ -30,7 +30,7 @@ class YogaClassesController < ApplicationController
         params.require(:yoga_class).permit(
             :date,
             :time,
-            :style_id, 
+            :style_name, 
             :teacher_id,
             :studio_id
             )
