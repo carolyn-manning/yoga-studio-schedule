@@ -24,7 +24,7 @@
             <td>
             <% if current_user && current_user.admin %>
                 <td><%= link_to "Edit Class", edit_yoga_class_path(yoga_class) %> </td>
-                <td>Delete</td>
+                <td> <%= link_to "Delete Class", yoga_class_path(yoga_class), method:'delete' %> </td>
             <% end %>
         </tr>
     <% end %>

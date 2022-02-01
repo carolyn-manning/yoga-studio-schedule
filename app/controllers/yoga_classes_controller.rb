@@ -36,6 +36,12 @@ class YogaClassesController < ApplicationController
         redirect_to yoga_classes_path
     end
 
+    def destroy
+        yoga_class = YogaClass.find_by_id(params[:id])
+        yoga_class.delete
+        redirect_to yoga_classes_path
+    end 
+
     private 
 
     def yoga_class_params
