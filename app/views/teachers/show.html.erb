@@ -1,4 +1,6 @@
 <h1> <%= @teacher.full_name %> </h1> 
+<%= link_to "Edit Teacher Profile", edit_teacher_path(@teacher) %>
+
 <p> <%= @teacher.bio %> </p> 
 
 <h2> <%= @teacher.first_name %>'s Styles: </h2> 
@@ -12,4 +14,4 @@
 
 <%= render 'yoga_classes/class_table' %> 
 
-<%= link_to "Edit Teacher Profile", edit_teacher_path(@teacher) %>
+
