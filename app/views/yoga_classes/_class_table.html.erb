@@ -7,6 +7,7 @@
     <th></th>
     <% if current_user && current_user.admin %>
         <th></th>
+        <th></th>
     <% end %>
   </tr>
   <% @yoga_classes.each do |yoga_class| %>
@@ -22,7 +23,8 @@
                 <% end %>
             <td>
             <% if current_user && current_user.admin %>
-                <th>LINK</th>
+                <td><%= link_to "Edit Class", edit_yoga_class_path(yoga_class) %> </td>
+                <td>Delete</td>
             <% end %>
         </tr>
     <% end %>

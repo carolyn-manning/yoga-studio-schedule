@@ -26,6 +26,16 @@ class YogaClassesController < ApplicationController
         @yoga_class = YogaClass.find_by(id:params[:id])
     end 
 
+    def edit
+        @yoga_class = YogaClass.find_by(id: params[:id])
+    end
+    
+    def update
+        yoga_class = YogaClass.find_by(id: params[:id])
+        yoga_class.update(yoga_class_params)
+        redirect_to yoga_classes_path
+    end
+
     private 
 
     def yoga_class_params
