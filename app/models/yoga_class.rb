@@ -12,7 +12,15 @@ class YogaClass < ApplicationRecord
         self.style = Style.find_or_create_by(name: name)
       end
    
-      def style_name
-         self.style ? self.style.name : nil
-      end
+    def style_name
+        self.style ? self.style.name : nil
+    end
+
+    def formatted_date 
+        date.strftime("%m/%d/%Y")
+    end 
+
+    def formatted_time
+        time.strftime("%H:%M")
+    end
 end
