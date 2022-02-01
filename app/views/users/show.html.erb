@@ -2,18 +2,6 @@
 
 <h3> Your upcoming classes: </h3>
 
-<% current_user.yoga_classes.each do |yoga_class| %>
-    <li> 
-    <%= yoga_class.date %> 
-    <%= yoga_class.time %> 
-    <%= yoga_class.style.name %> 
-    <%= yoga_class.teacher.first_name %> 
-    <%= form_tag delete_class_path do %>
-        <%= hidden_field_tag :yoga_class_id, yoga_class.id %>
-        <%= submit_tag "Cancel Class" %>
-    <% end %>
-    </li>
-
     <%= render 'yoga_classes/class_table' %> 
     
 <% end %>
