@@ -1,5 +1,5 @@
 <% @teachers.each do |teacher| %>
-    <li> <%= link_to teacher.first_name teacher.last_name , teacher_path(teacher) %> </li>
+    <li> <%= link_to teacher.full_name, teacher_path(teacher) %> </li>
 <% end %>
 
 <% if current_user && current_user.admin %>
