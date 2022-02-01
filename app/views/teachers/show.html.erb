@@ -1,4 +1,4 @@
-<h1> <%= @teacher.first_name %> <%= @teacher.last_name %> </h1> 
+<h1> <%= @teacher.full_name %> </h1> 
 
 <h2> <%= @teacher.first_name %>'s Styles: </h2> 
 <% @teacher.styles.uniq.each do |style| %>
@@ -16,3 +16,5 @@
     <%= yoga_class.teacher.first_name %> 
     </li>
 <% end %>
+
+<%= link_to "Edit Teacher Profile", edit_teacher_path(@teacher) %>
