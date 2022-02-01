@@ -15,7 +15,7 @@
             <td><%=yoga_class.formatted_date%></td>
             <td><%=yoga_class.formatted_time%></td>
             <td><%= yoga_class.style.name %></td>
-            <td><%= yoga_class.teacher.first_name %></td>
+            <td><%= link_to yoga_class.teacher.first_name, teacher_path(yoga_class.teacher) %></td>
             <td>
                 <%= form_tag add_class_path do %>
                     <%= hidden_field_tag :yoga_class_id, yoga_class.id %>

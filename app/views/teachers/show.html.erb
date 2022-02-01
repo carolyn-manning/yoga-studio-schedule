@@ -8,13 +8,7 @@
 <% end %>
 
 <h2> <%= @teacher.first_name %>'s Upcoming Classes </h2> 
-<% @teacher.yoga_classes.each do |yoga_class| %>
-    <li> 
-    <%= yoga_class.date %> 
-    <%= yoga_class.time %> 
-    <%= yoga_class.style.name %> 
-    <%= yoga_class.teacher.first_name %> 
-    </li>
-<% end %>
+
+<%= render 'yoga_classes/class_table' %> 
 
 <%= link_to "Edit Teacher Profile", edit_teacher_path(@teacher) %>
