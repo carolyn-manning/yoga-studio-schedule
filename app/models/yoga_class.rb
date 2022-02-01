@@ -23,4 +23,12 @@ class YogaClass < ApplicationRecord
     def formatted_time
         time.strftime("%H:%M")
     end
+
+    def self.upcoming_classes
+        where('date >= ?', Date.today)
+    end 
+
+    def self.past_classes
+        date < Date.today 
+    end 
 end

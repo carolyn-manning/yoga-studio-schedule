@@ -1,5 +1,6 @@
 class YogaClassesController < ApplicationController
     def new 
+        #redirect_if_not_admin
         @yoga_class = YogaClass.new
     end 
 
@@ -15,8 +16,9 @@ class YogaClassesController < ApplicationController
     def index
         if params[:user_id]
             @yoga_classes = User.find(params[:user_id]).yoga_classes
+            #create scope 
         else 
-            @yoga_classes = YogaClass.all
+            @yoga_classes = YogaClass.upcoming_classes
         end 
     end 
 

@@ -1,9 +1,9 @@
 <% @teachers.each do |teacher| %>
-    <li> <%= link_to teacher.first_name, teacher_path(teacher) %> </li>
+    <li> <%= link_to teacher.first_name teacher.last_name , teacher_path(teacher) %> </li>
 <% end %>
 
 <% if current_user && current_user.admin %>
-    <li> <%= link_to "Add New Teacher", new_teacher_path %> </li>
+    <%= link_to "Add New Teacher", new_teacher_path %> 
 <% end %>
 
 

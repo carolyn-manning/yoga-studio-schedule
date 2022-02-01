@@ -1,0 +1,30 @@
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Style</th>
+    <th>Teacher</th>
+    <th></th>
+    <% if current_user && current_user.admin %>
+        <th></th>
+    <% end %>
+  </tr>
+  <% @yoga_classes.each do |yoga_class| %>
+        <tr>
+            <td><%=yoga_class.formatted_date%></td>
+            <td><%=yoga_class.formatted_time%></td>
+            <td><%= yoga_class.style.name %></td>
+            <td><%= yoga_class.teacher.first_name %></td>
+            <td>
+                <%= form_tag add_class_path do %>
+                    <%= hidden_field_tag :yoga_class_id, yoga_class.id %>
+                    <%= submit_tag "Book Class" %>
+                <% end %>
+            <td>
+            <% if current_user && current_user.admin %>
+                <th>LINK</th>
+            <% end %>
+        </tr>
+    <% end %>
+</table>
+

@@ -1,21 +1,8 @@
-<% @yoga_classes.each do |yoga_class| %>
-    <% if yoga_class.date > Date.today %>
-    <li> 
-    <%= yoga_class.date %> 
-    <%= yoga_class.time %> 
-    <%= yoga_class.style.name %> 
-    <%= yoga_class.teacher.first_name %> 
-    <%= form_tag add_class_path do %>
-        <%= hidden_field_tag :yoga_class_id, yoga_class.id %>
-        <%= submit_tag "Add Class" %>
-      <% end %>
-      <% end %>
-    </li>
-    
-<% end %>
+
+<%= render 'class_table' %> 
 
 </br>
 
 <% if current_user && current_user.admin %>
-    <li> <%= link_to 'Create new class', new_yoga_class_path %></li>
+   <p><%= link_to 'Create new class', new_yoga_class_path %></p>
 <% end %>
