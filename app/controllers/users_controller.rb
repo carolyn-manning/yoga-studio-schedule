@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
     def show 
         @user = User.find_by_id(params[:id])
+        @yoga_classes = @user.yoga_classes
         redirect_if_not_current_user
     end 
 
