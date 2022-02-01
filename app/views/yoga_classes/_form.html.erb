@@ -11,8 +11,6 @@
     <%= f.label :teacher_id %>
     <%= f.collection_select :teacher_id, Teacher.all, :id, :first_name %>
     <br/>
-    <%= f.label :studio_id %>
-    <%= f.collection_select :studio_id, Studio.all, :id, :name %>  <br/>
   
     <%= f.submit %>
 <% end %>

@@ -2,7 +2,8 @@ class UserClass < ApplicationRecord
     belongs_to :user
     belongs_to :yoga_class
 
-    validate :is_not_duplicate?
+    validates :yoga_class_id, uniqueness: {scope: :user_id}
+    #validate :is_not_duplicate?
 
     def is_not_duplicate?
         if user.yoga_classes.any?

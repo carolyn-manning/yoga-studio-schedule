@@ -17,7 +17,6 @@ Rails.application.routes.draw do
 
   get '/auth/github/callback' => 'sessions#create'
   
-  resources :studios
 
   resources :users do 
     resources :yoga_classes
