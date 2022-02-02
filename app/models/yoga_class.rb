@@ -4,13 +4,15 @@ class YogaClass < ApplicationRecord
     has_many :user_classes
     has_many :users, through: :user_classes
     
-    validates :date, :time, uniqueness:true, presence:true
+    validates :time, uniqueness: {scope: :date}
     validates :teacher, presence:true
     validates :style, presence:true
+    validates :date, presence:true
+    validates :time, presence:true 
 
     def style_name=(name)
         self.style = Style.find_or_create_by(name: name)
-      end
+    end
    
     def style_name
         self.style ? self.style.name : nil

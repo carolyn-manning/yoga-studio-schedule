@@ -9,6 +9,7 @@ class TeachersController < ApplicationController
     end 
 
     def new
+        redirect_if_not_admin
         @teacher = Teacher.new
     end 
 
@@ -22,6 +23,7 @@ class TeachersController < ApplicationController
     end 
 
     def edit
+        redirect_if_not_admin
         @teacher = Teacher.find_by(id: params[:id])
     end
     

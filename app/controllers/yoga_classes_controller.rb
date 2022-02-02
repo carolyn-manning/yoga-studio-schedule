@@ -1,6 +1,6 @@
 class YogaClassesController < ApplicationController
     def new 
-        #redirect_if_not_admin
+        redirect_if_not_admin
         @yoga_class = YogaClass.new
     end 
 
@@ -27,6 +27,7 @@ class YogaClassesController < ApplicationController
     end 
 
     def edit
+        redirect_if_not_admin
         @yoga_class = YogaClass.find_by(id: params[:id])
     end
     
