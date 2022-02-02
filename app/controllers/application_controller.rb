@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
     end
 
     def redirect_if_not_admin
-        redirect_to root if !logged_in? || !current_user.admin
+        redirect_to '/' if !logged_in? || !current_user.admin
     end
     
 end
