@@ -2,6 +2,7 @@ class YogaClassesController < ApplicationController
     def new 
         redirect_if_not_admin
         @yoga_class = YogaClass.new
+        @teacher = Teacher.find_by_id(params[:teacher_id])
     end 
 
     def create 

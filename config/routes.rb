@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   post '/add_class', to: 'user_classes#add_class'
   post '/remove_class', to: 'user_classes#destroy'
 
-  resources :teachers, only: [:show, :new, :create, :edit, :update, :index]
+  resources :teachers do
+    resources :yoga_classes, only: [:new, :create]
+  end 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -14,8 +14,12 @@
     <%= f.label :style_name %>
     <%= f.text_field :style_name %>
     <br/>
-    <%= f.label :teacher_id %>
-    <%= f.collection_select :teacher_id, Teacher.all, :id, :first_name %>
+    <% if params[:teacher_id] %>
+        <%= f.hidden_field :teacher_id, :value => @teacher.id %>
+    <% else %>
+        <%= f.label :teacher_id %>
+        <%= f.collection_select :teacher_id, Teacher.all, :id, :first_name %>
+    <% end %>
     <br/>
   
     <%= f.submit %>

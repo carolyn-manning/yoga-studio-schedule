@@ -1,5 +1,9 @@
 <div class="list-header">
-    <h2>Create New Class</h2>
+    <% if params[:teacher_id] %>
+        <h2>Create New Class for <%= @teacher.full_name %> </h2>
+    <% else %>
+        <h2>Create New Class</h2>
+    <% end %>
 </div>
 
 <%= render 'form' %> 
