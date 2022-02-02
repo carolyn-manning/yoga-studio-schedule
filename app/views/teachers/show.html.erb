@@ -1,5 +1,8 @@
 <h1> <%= @teacher.full_name %> </h1> 
-<%= link_to "Edit Teacher Profile", edit_teacher_path(@teacher) %>
+
+<% if current_user && current_user.admin %>
+    <%= link_to "Edit Teacher Profile", edit_teacher_path(@teacher) %>
+<% end %>
 
 <p> <%= @teacher.bio %> </p> 
 
