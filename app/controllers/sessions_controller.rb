@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
     end 
 
     def create
+        #working on refactor
         if auth 
             @user =
             User.find_or_create_by(email: auth['info']['email']) do |u|
@@ -14,8 +15,8 @@ class SessionsController < ApplicationController
                 session[:user_id] = @user.id
                 redirect_to user_path(@user)
             else 
-                flash[:message] = "error"
-               redirect_to signin_path
+                flash[:message] = "Incorrect email or password"
+                redirect_to signin_path
            end 
 
         else 
@@ -24,7 +25,7 @@ class SessionsController < ApplicationController
                 session[:user_id] = user.id
                 redirect_to user_path(user)
             else 
-                 flash[:message] = "error"
+                flash[:message] = "Incorrect email or password"
                 redirect_to signin_path
             end 
         end 

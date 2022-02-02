@@ -1,3 +1,9 @@
+<% if @yoga_class.errors.any? %>
+  <% @yoga_class.errors.full_messages.each do |message|%>
+  <li><%= message %> </li>
+  <%end%>
+<%end%>
+
 <%= form_for @yoga_class  do |f| %>
     <%= f.label :date %>
     <%= f.date_field :date %>

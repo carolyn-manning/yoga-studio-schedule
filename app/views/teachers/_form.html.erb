@@ -1,3 +1,9 @@
+<% if @teacher.errors.any? %>
+  <% @teacher.errors.full_messages.each do |message|%>
+  <li><%= message %> </li>
+  <%end%>
+<%end%>
+
 <%= form_for @teacher  do |f| %>
     <%= f.label :first_name %>
     <%= f.text_field :first_name %>

@@ -15,7 +15,7 @@ class TeachersController < ApplicationController
 
     def create  
         @teacher = Teacher.new(teacher_params)
-        if @teacher.save!
+        if @teacher.save
             redirect_to teachers_path
         else 
             render 'new'
