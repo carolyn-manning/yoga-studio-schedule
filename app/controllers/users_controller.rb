@@ -7,7 +7,8 @@ class UsersController < ApplicationController
     def index
         redirect_if_not_admin
         if params[:yoga_class_id]
-            @users = YogaClass.find(params[:yoga_class_id]).users
+            @yoga_class = YogaClass.find(params[:yoga_class_id])
+            @users = @yoga_class.users
         else
             redirect_to '/'
         end

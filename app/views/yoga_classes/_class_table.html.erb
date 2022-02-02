@@ -8,6 +8,7 @@
     <% if current_user && current_user.admin %>
         <th></th>
         <th></th>
+        <th></th>
     <% end %>
   </tr>
   <% @yoga_classes.each do |yoga_class| %>
@@ -32,6 +33,7 @@
             <% if current_user && current_user.admin %>
                 <td><%= link_to "Edit Class", edit_yoga_class_path(yoga_class) %> </td>
                 <td> <%= link_to "Delete Class", yoga_class_path(yoga_class), method:'delete' %> </td>
+                <td> <%= link_to "Class List", yoga_class_users_path(yoga_class) %> </td>
             <% end %>
         </tr>
     <% end %>
