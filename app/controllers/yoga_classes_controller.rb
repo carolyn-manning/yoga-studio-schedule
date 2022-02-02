@@ -14,11 +14,7 @@ class YogaClassesController < ApplicationController
     end 
 
     def index
-        # if params[:user_id]
-        #     @yoga_classes = User.find(params[:user_id]).yoga_classes 
-        # else 
-            @yoga_classes = YogaClass.upcoming_classes
-        # end 
+        @yoga_classes = YogaClass.upcoming_classes
     end 
 
     def show 

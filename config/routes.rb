@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   get '/auth/github/callback' => 'sessions#create'
 
   get '/schedule', to: 'yoga_classes#index'
-  resources :yoga_classes, only: [:show, :new, :create, :update, :destroy, :edit]
+  resources :yoga_classes do
+    resources :users, only: [:index]
+  end
 
   post '/add_class', to: 'user_classes#add_class'
   post '/remove_class', to: 'user_classes#destroy'

@@ -4,6 +4,15 @@ class UsersController < ApplicationController
         @user = User.new
     end 
 
+    def index
+        redirect_if_not_admin
+        if params[:yoga_class_id]
+            @users = YogaClass.find(params[:yoga_class_id]).users
+        else
+            redirect_to '/'
+        end
+    end 
+
     def create
         @user = User.new(user_params)
         if @user.save
