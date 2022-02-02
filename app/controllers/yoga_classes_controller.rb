@@ -6,20 +6,19 @@ class YogaClassesController < ApplicationController
 
     def create 
         @yoga_class = YogaClass.new(yoga_class_params)
-        if @yoga_class.save!
-            redirect_to yoga_classes_path
+        if @yoga_class.save
+            redirect_to schedule_path
         else 
             render 'new'
         end 
     end 
 
     def index
-        if params[:user_id]
-            @yoga_classes = User.find(params[:user_id]).yoga_classes
-            #create scope 
-        else 
+        # if params[:user_id]
+        #     @yoga_classes = User.find(params[:user_id]).yoga_classes 
+        # else 
             @yoga_classes = YogaClass.upcoming_classes
-        end 
+        # end 
     end 
 
     def show 
@@ -34,13 +33,13 @@ class YogaClassesController < ApplicationController
     def update
         yoga_class = YogaClass.find_by(id: params[:id])
         yoga_class.update(yoga_class_params)
-        redirect_to yoga_classes_path
+        redirect_to schedule_path
     end
 
     def destroy
         yoga_class = YogaClass.find_by_id(params[:id])
         yoga_class.delete
-        redirect_to yoga_classes_path
+        redirect_to schedule_path
     end 
 
     private 

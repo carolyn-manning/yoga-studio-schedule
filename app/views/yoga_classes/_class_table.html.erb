@@ -18,7 +18,7 @@
             <td><%= link_to yoga_class.teacher.first_name, teacher_path(yoga_class.teacher) %></td>
             <td>
             <% if current_user && current_user.yoga_classes.include?(yoga_class) %>
-                <%= form_tag delete_class_path do %>
+                <%= form_tag remove_class_path do %>
                     <%= hidden_field_tag :yoga_class_id, yoga_class.id %>
                     <%= submit_tag "Cancel Class" %>
                 <% end %>
