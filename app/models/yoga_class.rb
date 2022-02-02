@@ -9,7 +9,12 @@ class YogaClass < ApplicationRecord
     validates :style, presence:true
     validates :date, presence:true
     validates :time, presence:true 
+    validate :date_is_in_future
 
+    def date_is_in_future
+        errors.add(:date, "cannot be in the past") if date && date <= Date.today     
+    end
+ 
     def style_name=(name)
         self.style = Style.find_or_create_by(name: name)
     end
