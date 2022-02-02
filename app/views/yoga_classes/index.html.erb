@@ -1,8 +1,8 @@
 
-<%= render 'class_table' %> 
+<%= render 'class_table' %> </br>
 
-</br>
-
-<% if current_user && current_user.admin %>
-   <p><%= link_to 'Create new class', new_yoga_class_path %></p>
-<% end %>
+<div class="edit-schedule-link">
+   <% if current_user && current_user.admin %>
+      <p><%= link_to 'Create New Class', new_yoga_class_path %></p>
+   <% end %>
+</div>

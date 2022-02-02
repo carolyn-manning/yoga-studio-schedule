@@ -1,10 +1,17 @@
-<% @teachers.each do |teacher| %>
-    <li> <%= link_to teacher.full_name, teacher_path(teacher) %> </li>
-<% end %>
+<h1> Teachers </h1>
 
-<% if current_user && current_user.admin %>
-    <%= link_to "Add New Teacher", new_teacher_path %> 
-<% end %>
+<div class="list">  
+    <% @teachers.each do |teacher| %>
+        <li> <%= link_to teacher.full_name, teacher_path(teacher) %> </li>
+    <% end %>
+</div>
+
+<div class="edit-link">
+    <% if current_user && current_user.admin %>
+        <%= link_to "Add New Teacher", new_teacher_path %> 
+    <% end %>
+</div>
+
 
 
 

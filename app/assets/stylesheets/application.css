@@ -52,11 +52,11 @@ td {
     text-align: center;
   }
 
-.welcome-banner, .welcome-message, .address {
+.welcome-banner, .welcome-bio-message, .address {
     text-align: center;
   }
 
-.welcome-message {
+.welcome-bio-message {
     font-size: 1.2em;
     border-style: solid;
 }
@@ -65,6 +65,26 @@ td {
     line-height: 0;
     font-weight: bold;
 }
+
+.edit-schedule-link {
+    margin-left: 60px;
+}
+
+.edit-link {
+}
+
+.list {
+    list-style-type: none;
+    padding-bottom: 25px;
+    font-size: 1em;
+}
+
+.list-header {
+    font-weight: bold;
+    line-height: 0;
+}
+
+
 
 
 

@@ -4,16 +4,25 @@
     <%= link_to "Edit Teacher Profile", edit_teacher_path(@teacher) %>
 <% end %>
 
-<p> <%= @teacher.bio %> </p> 
+<div class="welcome-bio-message">
+    <p> <%= @teacher.bio %> </p>    
+</div>
 
-<h2> <%= @teacher.first_name %>'s Styles: </h2> 
+<div class="list-header">
+    <h2> <%= @teacher.first_name %>'s Styles: </h2> 
+</div>
+     
+<div class="list">
 <% @teacher.styles.uniq.each do |style| %>
     <li> 
-    <%= style.name %> 
-    </li>
-<% end %>
+        <%= style.name %> 
+        </li>
+    <% end %>
+</div>
 
-<h2> <%= @teacher.first_name %>'s Upcoming Classes: </h2> 
+<div class="list-header">
+    <h2> <%= @teacher.first_name %>'s Upcoming Classes: </h2> 
+</div>
 
 <%= render 'yoga_classes/class_table' %> 
 
