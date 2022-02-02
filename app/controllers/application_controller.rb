@@ -13,7 +13,6 @@ class ApplicationController < ActionController::Base
     def redirect_if_not_current_user
         if @user && @user != current_user && logged_in?
             redirect_to user_path(current_user)
-            #flash 
         elsif !@user || !logged_in?
             redirect_to '/'
         end 
@@ -22,5 +21,9 @@ class ApplicationController < ActionController::Base
     def redirect_if_not_admin
         redirect_to '/' if !logged_in? || !current_user.admin
     end
+
+    def redirect_if_not_logged_in
+        redirect_to signin_path if !logged_in? 
+    end 
     
 end
