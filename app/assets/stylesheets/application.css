@@ -14,6 +14,39 @@
  *= require_self
  */
 
+ .nav ul {
+    list-style: none;
+    background-color: rgb(6, 80, 90);
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+  .nav li {
+    font-family: 'Times', sans-serif;
+    font-size: 1.2em;
+    line-height: 40px;
+    height: 40px;
+    border-bottom: 1px solid rgb(26, 24, 24);
+  }
+   
+  .nav a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    transition: .3s background-color;
+  }
+
+  .nav li {
+    display: inline-block;
+    margin-right: -4px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  
+
+  
+
 
 
 
