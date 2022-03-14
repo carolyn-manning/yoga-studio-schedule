@@ -26,6 +26,6 @@
 
 <%= render 'yoga_classes/class_table' %> 
 
-<%= link_to "Add Class to Teacher's Schedule", new_teacher_yoga_class_path(@teacher) %>
-
-
+<% if current_user && current_user.admin %>
+    <%= link_to "Add Class to Teacher's Schedule", new_teacher_yoga_class_path(@teacher) %>
+<% end %>

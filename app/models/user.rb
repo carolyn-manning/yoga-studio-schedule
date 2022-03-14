@@ -10,4 +10,8 @@ class User < ApplicationRecord
     def full_name 
         first_name + " " + last_name
     end 
+
+    def upcoming_user_classes
+        self.yoga_classes.where('date >= ?', Date.today)
+    end
 end

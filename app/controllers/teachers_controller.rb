@@ -5,7 +5,7 @@ class TeachersController < ApplicationController
 
     def show
         @teacher = Teacher.find_by_id(params[:id])
-        @yoga_classes = @teacher.yoga_classes
+        @yoga_classes = @teacher.upcoming_teacher_classes
     end 
 
     def new
